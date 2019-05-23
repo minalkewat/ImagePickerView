@@ -14,6 +14,8 @@
 		16163C4D2295302B009589AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16163C4B2295302B009589AB /* LaunchScreen.storyboard */; };
 		16163C582295302C009589AB /* ImagePickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16163C572295302C009589AB /* ImagePickerViewTests.swift */; };
 		16163C632295302C009589AB /* ImagePickerViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16163C622295302C009589AB /* ImagePickerViewUITests.swift */; };
+		16163C71229530F6009589AB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16163C70229530F6009589AB /* ImageCollectionViewCell.swift */; };
+		16BF85E122966A47009598C8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF85E022966A47009598C8 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		16163C5E2295302C009589AB /* ImagePickerViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagePickerViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16163C622295302C009589AB /* ImagePickerViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewUITests.swift; sourceTree = "<group>"; };
 		16163C642295302C009589AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16163C70229530F6009589AB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		16BF85E022966A47009598C8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				16163C492295302B009589AB /* Assets.xcassets */,
 				16163C4B2295302B009589AB /* LaunchScreen.storyboard */,
 				16163C4E2295302B009589AB /* Info.plist */,
+				16163C70229530F6009589AB /* ImageCollectionViewCell.swift */,
+				16BF85E022966A47009598C8 /* Person.swift */,
 			);
 			path = ImagePickerView;
 			sourceTree = "<group>";
@@ -256,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16163C71229530F6009589AB /* ImageCollectionViewCell.swift in Sources */,
 				16163C4522953029009589AB /* ViewController.swift in Sources */,
+				16BF85E122966A47009598C8 /* Person.swift in Sources */,
 				16163C4322953029009589AB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2F5MW64QA;
 				INFOPLIST_FILE = ImagePickerView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2F5MW64QA;
 				INFOPLIST_FILE = ImagePickerView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
