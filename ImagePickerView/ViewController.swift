@@ -44,6 +44,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UIImagePickerC
                 }
                 person.name = newName
                 self?.collectiionView.reloadData()
+                self?.save()
             })
         
       present(alertVC, animated: true)
@@ -61,12 +62,25 @@ class ViewController: UIViewController,UICollectionViewDataSource,UIImagePickerC
     
     
     var people = [Person]()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
+        
+        let defaults = UserDefaults.standard
+        if let savedPeople = defaults.object(forKey: "people") as? Data{
+            let jsonDecoder = JSONDecoder()
+            do {
+                people = try jsonDecoder.decode([Person].self, from: savedPeople)
+            } catch{
+                print("failed to load json")
+            }
+        }
+        
+        
     }
     
     @objc func addNewPerson(){
@@ -93,6 +107,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UIImagePickerC
         collectiionView.reloadData()
         
         
+        
         dismiss(animated: true, completion: nil)
         
     }
@@ -101,6 +116,18 @@ class ViewController: UIViewController,UICollectionViewDataSource,UIImagePickerC
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
+    }
+    
+    
+    
+    func save(){
+        let jsonEncoder = JSONEncoder()
+        if let saveData = try? jsonEncoder.encode(people){
+            let defaults = UserDefaults.standard
+            defaults.set(saveData, forKey: "people")
+        }else{
+            print("Failed to save people")
+        }
     }
 
 }
